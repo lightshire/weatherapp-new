@@ -1,3 +1,8 @@
+
+requirejs.config({
+    urlArgs: "bust=" + (new Date()).getTime(),  
+});
+
 require(['libs/text!header.html', 'libs/text!home.html', 'libs/text!footer.html'], function (headerTpl, homeTpl, footerTpl) {
 	
 	var ApplicationRouter = Backbone.Router.extend({

@@ -21,53 +21,22 @@
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
+    background:url(../images/main-background.png);
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
+    
     width:100%;
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+   padding: 50px;
 }
 
 /* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
-}
+
 
 h1 {
     font-size:24px;
@@ -112,4 +81,70 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+.btn-group .dropdown-menu {
+    width: 100%;
+    font-size: 24px !important;
+}
+
+.slide-menu {
+    position: absolute;
+    height: 100%;
+    width:80%;
+    left: -80%;
+    background: rgba(0,0,0, 0.75);
+    border:1px #000 solid;
+    z-index: 2000;
+}
+
+.slide-menu .nav-stacked > li {
+    
+}
+
+.slide-menu .nav-stacked >li > a {
+    font-size: 20px;
+    color: #FFF;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 0;
+    padding: 10px;
+    display: block;
+}
+
+
+
+.btn {
+    padding: 10px 10px;
+}
+
+.logo {
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.wrapper {
+    padding: 20px;
+}
+
+.wrapper .form-label {
+    font-size: 16px;
+}
+
+span.input-group-addon {
+    cursor: pointer;
+}
+
+.nav {
+    padding: 0px 30px;
+}
+
+.title {
+    font-size: 30px;
+    margin-left: 34px;
+}
+
+.title > li > a {
+    color: #FFF !important;
 }
