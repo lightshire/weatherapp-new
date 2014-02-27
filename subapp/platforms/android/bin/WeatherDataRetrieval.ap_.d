@@ -202,6 +202,7 @@
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/css/bootstrap-theme.min.css \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/css/bootstrap-datetimepicker.min.css \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/css/bootstrap.css \
+/var/www/weatherapp-new/subapp/platforms/android/assets/www/js/serialize.objects.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/bootstrap.min.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/text.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/underscore.js \
@@ -215,6 +216,7 @@
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/bootstrap.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/backbone.js \
+/var/www/weatherapp-new/subapp/platforms/android/assets/www/js/Db.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/models \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/datebox.core.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/main.js \
@@ -230,11 +232,15 @@
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/tpls/HomeView.tpl \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/Damage.js \
+/var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/DisasterResults.js \
+/var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/LocationProfile.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/Location.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/Weather.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/Sync.js \
+/var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/ResultsOutput.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/Home.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/LocOutput.js \
+/var/www/weatherapp-new/subapp/platforms/android/assets/www/js/index/views/untitled.js \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/Siminov/Model \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/Siminov/Events \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/Siminov/Parser \
@@ -321,5 +327,8 @@
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/views/sync.html \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/views/loc_output.html \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/views/location.html \
+/var/www/weatherapp-new/subapp/platforms/android/assets/www/views/results.html \
+/var/www/weatherapp-new/subapp/platforms/android/assets/www/views/profile.html \
+/var/www/weatherapp-new/subapp/platforms/android/assets/www/views/disaster-results.html \
 /var/www/weatherapp-new/subapp/platforms/android/assets/www/views/home.html \
 /var/www/weatherapp-new/subapp/platforms/android/bin/AndroidManifest.xml \

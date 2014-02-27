@@ -1,6 +1,7 @@
 define(['require'], function(require) {
     "use strict";
-
+    var Db = require('Db');
+    var $ = require('jquery');
     var structure = {
         name: "MeteorModel",
         table: 'meteorological',
@@ -28,6 +29,17 @@ define(['require'], function(require) {
         }]
     };
 
+    var propertiesDefault = {
+        fromPrecip: 0,
+        toPrecip: 2000,
+        fromTemp: 0,
+        toTemp: 2000,
+        fromWind: 0,
+        toWind: 2000,
+        fromDate: "1970-01-01",
+        toDate: "2020-12-30"
+
+    };
     var model = {
         createTable: function() {
             var properties = structure.properties;
@@ -40,6 +52,28 @@ define(['require'], function(require) {
             }
             sql += ")";
             return sql;
+        },
+        SearchByRange: function(properties, callback) {
+            $.extend(propertiesDefault, properties);
+
+            properties = propertiesDefault;
+
+            var sql = "select * from meteorological as m join times as t where m.T_ID = t.id and strftime('%Y-%m-%d', T.TYear || '-' || T.TMonth || '-01') between ? and ? and average_precipitation between ? and ? and average_wind_speed between ? and ? and average_temperature between ? and ?";
+            var prop = [
+                properties.fromDate,
+                properties.toDate,
+                properties.fromPrecip,
+                properties.toPrecip,
+                properties.fromWind,
+                properties.toWind,
+                properties.fromTemp,
+                properties.toTemp
+            ];
+            Db.make().execute(sql, prop, function(res) {
+                callback(res);
+            }, function(e) {
+                $.error("An error occured." + e.message);
+            });
         }
     };
 

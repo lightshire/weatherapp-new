@@ -22,7 +22,40 @@ define(function(require) {
             "location-output": 'locationOutput',
             "weather": "weather",
             "damages": "damages",
-            'db-upload': 'dbUpload'
+            'db-upload': 'dbUpload',
+            "results": 'results',
+            'profile': 'profile',
+            'disasters-results': 'disasterResults'
+        },
+        profile: function() {
+            require(['app/views/LocationProfile'], function(LocationProfile) {
+                var view = new LocationProfile({
+                    $el: $("#content")
+                });
+                view.render();
+                title.html("Location Profile");
+                homeBtn.fadeIn();
+            });
+        },
+        disasterResults: function() {
+            require(['app/views/DisasterResults'], function(DisasterResults) {
+                var view = new DisasterResults({
+                    $el: $("#content")
+                });
+                view.render();
+                title.html("Disaster Profile..");
+                homeBtn.fadeIn(200);
+            });
+        },
+        results: function() {
+            require(['app/views/ResultsOutput'], function(ResultsOutputView) {
+                var view = new ResultsOutputView({
+                    $el: $("#content")
+                });
+                view.render();
+                title.html("Results..");
+                homeBtn.fadeIn(200);
+            });
         },
         locationOutput: function() {
             require(['app/views/LocOutput'], function(LocOutputView) {

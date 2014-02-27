@@ -1,48 +1,56 @@
-<div data-role='collapsible' data-collapsed='true' data-theme='a'>
-	<h3>Date Range</h3>
-	<div data-role='fieldcontain'>
-		<label for='fromPicker'>From</label>
-		<input type='text' name='from' id='fromPicker' />
+<form role='form' id='mainWeatherForm'>
+	<div data-role='collapsible' data-collapsed='true' data-theme='a'>
+		<h3>Date Range</h3>
+		<div data-role='fieldcontain'>
+			<label for='fromDate'>From</label>
+			<input name="fromDate" id="fromDate" type="text" data-role="datebox" data-options='{"mode": "calbox"}' style='color:#FFF;'>
+		</div>
+		<div data-role='fieldcontain'>
+			<label for='toDate'>To</label>
+			<input name="toDate" id="toDate" type="text" data-role="datebox" data-options='{"mode": "calbox"}' style='color: #FFF;'>
+		</div>
 	</div>
-	<div data-role='fieldcontain'>
-		<label for='toPicker'>To</label>
-		<input type='text' name='from' id='toPicker' />
-	</div>
-</div>
 
-<div data-role='collapsible' data-collapsed='true' data-theme='a'>
-	<h3>Temparature Range</h3>
-	<div data-role='fieldcontain'>
-		<label for='fromTemp'>From</label>
-		<input type='range' name='fromTemp' id='fromTemp' max='200' min='-200' value='0' />
+	<div data-role='collapsible' data-collapsed='true' data-theme='a'>
+		<h3>Temparature Range (in celcius)</h3>
+		<div data-role='fieldcontain'>
+			<label for='fromTemp'>From</label>
+			<input type='range' name='fromTemp' id='fromTemp' max='200' min='0' value='0' />
+		</div>
+		<div data-role='fieldcontain'>
+			<label for='toTemp'>To</label>
+			<input type='range' name='toTemp' id='toTemp' max='200' min='0' value='0' />
+		</div>
 	</div>
-	<div data-role='fieldcontain'>
-		<label for='toTemp'>To</label>
-		<input type='range' name='toTemp' id='toTemp' max='200' min='-200' value='0' />
-	</div>
-</div>
 
-<div data-role='collapsible' data-collapsed='true' data-theme='a'>
-	<h3>Wind Speed Range</h3>
-	<div data-role='fieldcontain'>
-		<label for='fromWind'>From</label>
-		<input type='range' name='fromWind' id='fromWind' max='2000' min='0' value='0' />
+	<div data-role='collapsible' data-collapsed='true' data-theme='a'>
+		<h3>Wind Speed Range</h3>
+		<div data-role='fieldcontain'>
+			<label for='fromWind'>From</label>
+			<input type='range' name='fromWind' id='fromWind' max='2000' min='0' value='0' />
+		</div>
+		<div data-role='fieldcontain'>
+			<label for='toWind'>To</label>
+			<input type='range' name='toWind' id='toWind' max='2000' min='0' value='0' />
+		</div>
 	</div>
-	<div data-role='fieldcontain'>
-		<label for='toWind'>To</label>
-		<input type='range' name='toWind' id='toWind' max='2000' min='0' value='0' />
+	<div data-role='collapsible' data-collapsed='true' data-theme='a'>
+		<h3>Precipitation Range</h3>
+		<div data-role='fieldcontain'>
+			<label for='fromPrecip'>From</label>
+			<input type='range' name='fromPrecip' id='fromPrecip' max='2000' min='0' value='0' />
+		</div>
+		<div data-role='fieldcontain'>
+			<label for='toPrecip'>To</label>
+			<input type='range' name='toPrecip' id='toPrecip' max='2000' min='0' value='0' />
+		</div>
 	</div>
-</div>
-<div data-role='collapsible' data-collapsed='true' data-theme='a'>
-	<h3>Precipitation Range</h3>
-	<div data-role='fieldcontain'>
-		<label for='fromPrecip'>From</label>
-		<input type='range' name='fromPrecip' id='fromPrecip' max='2000' min='0' value='0' />
+	<div data-role='collapsible' data-collapsed='true' data-theme='a'>
+		<h3>Type of Disaster</h3>
+		<div data-role='fieldcontain'>
+			<fieldset data-role='controlgroup' id='disaster-field-set'></fieldset>
+		</div>
 	</div>
-	<div data-role='fieldcontain'>
-		<label for='toPrecip'>To</label>
-		<input type='range' name='toPrecip' id='toPrecip' max='2000' min='0' value='0' />
-	</div>
-</div>
 
-<button class='btn-submit'>SEARCH</button>
+	<button class='btn-submit' id='btnWeatherSearch'>SEARCH</button>
+</form>

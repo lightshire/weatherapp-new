@@ -1,6 +1,8 @@
 define(['require'], function(require) {
     "use strict";
 
+    var Db = require("Db");
+
     var structure = {
         name: "DisasterModel",
         table: 'disasters',
@@ -46,12 +48,20 @@ define(['require'], function(require) {
             return sql;
         },
         getDistinct: function(column_name, callback) {
-            var db = window.sqlitePlugin.openDatabase("weather-app-proper", "1.0", 'Demo', 65536);
-            db.transaction(function(tx) {
-                tx.executeSql("select distinct " + column_name + " from " + structure.table + ";", [], function(tx, res) {
-                    callback(res);
-                });
+            // var db = window.sqlitePlugin.openDatabase("weather-app-proper", "1.0", 'Demo', 65536);
+            // db.transaction(function(tx) {
+            //     tx.executeSql("select distinct " + column_name + " from " + structure.table + ";", [], function(tx, res) {
+            //         callback(res);
+            //     });
+            // });
+            var sql = "select distinct " + column_name + " from " + structure.table + ";";
+
+            Db.make().execute(sql, [], function(res) {
+                callback(res);
+            }, function(e) {
+                $.error("An error occured. " + e.message);
             });
+
         },
         Search: function(from, to, locations, disasters, onSuccessCallback, onFailureCallback) {
             var db = window.sqlitePlugin.openDatabase("weather-app-proper", "1.0", 'Demo', 65536);
@@ -82,7 +92,7 @@ define(['require'], function(require) {
 
                 console.log("final variables: " + finalHandler.toString());
 
-                query = "select d.type, d.DDate, d.L_ID from " + structure.table + " AS d JOIN locations L ON d.L_ID=L.id where d.type in(" + disasterHandler + ") and  d.L_ID in(" + locationHandler + ") and  d.DDate between ? and ?;";
+                query = "select d.* from " + structure.table + " AS d JOIN locations L ON d.L_ID=L.id where d.type in(" + disasterHandler + ") and  d.L_ID in(" + locationHandler + ") and  d.DDate between ? and ?;";
                 console.log('query is: ' + query);
                 tx.executeSql(query, finalHandler, function(tx, res) {
                     onSuccessCallback(res);
